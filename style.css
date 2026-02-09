@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron:700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #191654 0%, #43C6AC 100%);
+  color: #fff;
+  font-family: 'Orbitron', 'Yu Gothic', 'Meiryo', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.neon-container {
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.neon-text {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow:
+    0 0 6px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff,
+    0 0 80px #0ff;
+  letter-spacing: .05em;
+  animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+  from { opacity: 1;}
+  to { opacity: 0.7;}
+}
+
+.fade-in {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  opacity: 0;
+  animation: fadeIn 3s 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+footer {
+  position: fixed;
+  bottom: 12px;
+  left: 0; right: 0;
+  text-align: center;
+  font-size: 1rem;
+  color: #aaa;
+  letter-spacing: .15em;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .neon-text { font-size: 2rem; }
+  .fade-in { font-size: 1.1rem; }
+}
