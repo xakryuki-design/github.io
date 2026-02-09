@@ -1,63 +1,94 @@
-@import url('https://fonts.googleapis.com/css?family=Orbitron:700&display=swap');
-
 body {
-  margin: 0;
+  min-height: 100vh;
   padding: 0;
-  height: 100vh;
-  background: linear-gradient(135deg, #191654 0%, #43C6AC 100%);
-  color: #fff;
-  font-family: 'Orbitron', 'Yu Gothic', 'Meiryo', sans-serif;
+  margin: 0;
+  background: linear-gradient(120deg, #202239 0%, #0f222f 100%);
   display: flex;
   flex-direction: column;
+  font-family: 'Montserrat', 'Yu Gothic', 'Meiryo', sans-serif;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.1 );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 20px;
+  border: 1.5px solid rgba(255,255,255,0.14);
+  padding: 2.8rem 2.2rem 2rem 2.2rem;
+  margin: 36px 0 0 0;
+  text-align: center;
+  max-width: 340px;
+  animation: cardFadein 1.1s cubic-bezier(.41,1.03,.51,.95) both;
+}
+@keyframes cardFadein {
+  0% { opacity: 0; transform: translateY(40px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+h1 {
+  margin-top: 0;
+  font-size: 2.3rem;
+  letter-spacing: 0.15em;
+  color: #ffffffdd;
+  font-weight: 700;
+  font-family: 'Montserrat', 'Yu Gothic', sans-serif;
+  text-shadow: 0 2px 8px #0ff3, 0 0 0 transparent;
+}
+.accent {
+  color: #18ffe6;
+  text-shadow: 0 2px 10px #14ffe8,0 0 6px #133bff9c;
+}
+.lead {
+  margin: 10px 0 22px 0;
+  color: #b8dedf;
+  font-size: 1.04rem;
+  letter-spacing: 0.04em;
+}
+.profile {
+  display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5em;
+  margin-bottom: 12px;
 }
-
-.neon-container {
-  text-align: center;
-  margin-top: 10vh;
+.avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1.1px solid #18ffe6b5;
+  box-shadow: 0 1px 10px #12edeb33;
 }
-
-.neon-text {
-  font-size: 3rem;
-  color: #fff;
-  text-shadow:
-    0 0 6px #0ff,
-    0 0 20px #0ff,
-    0 0 40px #0ff,
-    0 0 80px #0ff;
-  letter-spacing: .05em;
-  animation: flicker 2s infinite alternate;
+.user {
+  color: #95c1e9;
+  font-weight: 500;
+  font-size: 1.1rem;
+  font-family: 'Montserrat', 'Yu Gothic', sans-serif;
 }
-
-@keyframes flicker {
-  from { opacity: 1;}
-  to { opacity: 0.7;}
+.divider {
+  border-top: 1px solid #18ffe67a;
+  width: 70px;
+  margin: 18px auto;
 }
-
-.fade-in {
-  font-size: 1.4rem;
-  margin-top: 2rem;
-  opacity: 0;
-  animation: fadeIn 3s 0.5s forwards;
+.glass-card p {
+  color: #eaebf3ec;
+  margin-top: 0.6em;
+  line-height: 1.7;
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
 }
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
 footer {
-  position: fixed;
-  bottom: 12px;
-  left: 0; right: 0;
+  margin: 32px 0 12px 0;
+  color: #9ab6c6a3;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
   text-align: center;
-  font-size: 1rem;
-  color: #aaa;
-  letter-spacing: .15em;
 }
 
-/* スマホ対応 */
+/* スマホ */
 @media (max-width: 600px) {
-  .neon-text { font-size: 2rem; }
-  .fade-in { font-size: 1.1rem; }
+  .glass-card { padding: 1.5rem 1.3rem 1rem 1.3rem; max-width: 96vw;}
+  h1 { font-size: 1.28rem;}
+  .user { font-size: 0.99rem;}
+  footer { font-size: 0.88rem;}
 }
